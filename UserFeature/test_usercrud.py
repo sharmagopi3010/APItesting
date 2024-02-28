@@ -25,11 +25,7 @@ def test_createUser():
     tech_detail_url = baseURL+"api/technicalskills/"
     with open('technicaldetails.json','r') as f:
         tech_payload = json.loads(f.read())
-        print(tech_payload)
         tech_payload['id'] = user_id
-        print (tech_payload['id'])
-        print(tech_payload)
-        print(type(tech_payload['id']))
     response2  = requests.post(tech_detail_url,tech_payload)
     print(response2)
 
@@ -38,8 +34,6 @@ def test_createUser():
     print (response3.status_code)
     tech_get_details = json.loads(response3.text)
     print (tech_get_details)
-
-
 
     final_url = baseURL+"api/FinalStudentDetails/"+str(user_id)
     response3 = requests.get(final_url)
