@@ -4,6 +4,7 @@ class Common:
     def __init__(self, FileName, SheetName):
         global wk
         global sh
+        global columns
 
         wk = openpyxl.load_workbook(FileName)
         sh = wk[SheetName]
